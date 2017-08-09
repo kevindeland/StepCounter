@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:ap="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
+    tools:context="com.example.kevindeland.accelerometergraph.OrientationGraphActivity">
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Hello World!" />
+
+
+    <com.androidplot.xy.XYPlot
+        style="@style/APDefacto.Dark"
+        android:id="@+id/xyzHistoryPlot"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        ap:title="A Simple XY Plot"
+        ap:rangeTitle="range"
+        ap:domainTitle="domain"
+        ap:lineLabels="left|bottom"
+        ap:lineLabelRotationBottom="-45" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2">
+            <Button
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="LEFT TURN"
+                android:onClick="saveData"
+                android:tag="left"
+                android:id="@+id/leftTurnButton"/>
+            <Button
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="RIGHT TURN"
+                android:onClick="saveData"
+                android:tag="right"
+                android:id="@+id/rightTurnButton"/>
+        </LinearLayout>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="BRAKE"
+            android:onClick="saveData"
+            android:tag="brake"
+            android:id="@+id/brakeButton"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="CRASH"
+            android:onClick="saveData"
+            android:tag="crash"
+            android:id="@+id/crashButton"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="PEDALING"
+            android:onClick="saveData"
+            android:tag="pedal"
+            android:id="@+id/pedalButton"/>
+    </LinearLayout>
+
+
+</LinearLayout>
